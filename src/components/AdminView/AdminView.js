@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'; 
+import moment from 'moment'; 
 
 class AdminView extends Component {
 
   componentDidMount(){
     this.getOrderHistory();
   }
-
 
   getOrderHistory = () => {
     axios({
@@ -42,7 +42,7 @@ class AdminView extends Component {
                   {order.customer.name}
                   </td>
                   <td>
-                  {order.time}
+                  {moment(order.time).format('MMMM Do YYYY, h:mm:ss a')}
                   </td>
                   <td>
                   {order.type}
