@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import TopComponent from './TopComponent/TopComponent';
-import TableComponent from './TableComponent/TableComponent';
+import TopComponent from './TopComponent/TopComponent.js';
+import TableComponent from './TableComponent/TableComponent.js';
 import {connect} from 'react-redux';
 
 class CheckoutView extends Component{
