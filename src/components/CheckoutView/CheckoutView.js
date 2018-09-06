@@ -26,7 +26,7 @@ class CheckoutView extends Component{
         return(
             <div>
             <TopComponent />
-            {/* <TableComponent /> */}
+            <TableComponent /> 
             <button onClick={this.postOrder}>Checkout</button>
             </div>
         ) //end of return

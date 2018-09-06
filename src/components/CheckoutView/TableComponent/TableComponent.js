@@ -18,7 +18,7 @@ class TableComponent extends Component {
                         console.log(pizzas);
 
                         return (
-                            <TableItem key={i} pizzas={this.props.reduxState.currentOrder.pizzas} />
+                            <TableItem key={i} pizzas={pizzas} />
                         )
                     })}
 
