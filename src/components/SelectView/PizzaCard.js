@@ -22,13 +22,24 @@ const styles = {
 
 class PizzaCard extends Component {
 
-  handleClick = () => {
-    console.log(this.props.pizza.name);
-    
+  addPizzaToOrder = () => {
+    console.log('adding to order:', this.props.pizza.name);
+    const action = {
+      type: 'ADD_PIZZA',
+      payload: this.props.pizza
+    };
+    this.props.dispatch(action);
   };
+
+  removePizzaFromOrder = () => {
+    console.log('removing from order:', this.props.pizza.name);
+    
+  }
 
   render() {
     const { pizza } = this.props;
+    const pizzasInOrder = this.props.reduxState.currentOrder.pizzas;
+    console.log(pizzasInOrder);
     return(
       <div style={styles.container}>
         <img style={styles.image} src={pizza.image_path} />
@@ -37,7 +48,11 @@ class PizzaCard extends Component {
           <p>{pizza.description}</p>
           <p>{pizza.cost}</p>
         </div>
-        <button onClick={this.handleClick}>Add to Order</button>
+        {/* Check if the pizza in the card is already in the order (compare ids). 
+        If not, show the Add to Order button. If so, show the Remove from Order button. */}
+        {pizzasInOrder.some(p => p._id === pizza._id) === false
+        ? <button onClick={this.addPizzaToOrder}>Add to Order</button>
+        : <button onClick={this.removePizzaFromOrder}>Remove from Order</button>}
       </div>
     );
   }
