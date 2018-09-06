@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import PizzaCard from './PizzaCard';
 
+const containerStyle = {
+  width: '900px',
+  margin: '20px auto',
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-around',
+}
+
 class SelectView extends Component {
   constructor(props) {
     super(props);
@@ -34,9 +42,10 @@ class SelectView extends Component {
     return (
       <div>
         <h1>Step 1: Select Your Pizza</h1>
-        <ul>
+        <div style={containerStyle}>
           {this.state.pizzas.map(pizza => <PizzaCard key={pizza._id} pizza={pizza} />)}
-        </ul>
+        </div>
+        
         <div>
           <button onClick={this.nextPage}>
             Next

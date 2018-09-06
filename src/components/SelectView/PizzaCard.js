@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 
 const styles = {
   container: {
+    float: 'left',
     height: '450px',
     width: '250px',
     padding: '10px',
     border: '1px solid gray',
     borderRadius: '5px',
     boxShadow: '0 2px 2px rgba(0,0,0,0.25)',
+    margin: '10px',
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: '200px 200px 50px'
