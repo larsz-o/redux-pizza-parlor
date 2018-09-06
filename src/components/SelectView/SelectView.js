@@ -23,6 +23,12 @@ class SelectView extends Component {
     });
   }
 
+  nextPage = () => {
+    console.log('nextPage working');
+    
+    this.props.history.push("customer")
+  }
+
   render() {
     return (
       <div>
@@ -30,6 +36,11 @@ class SelectView extends Component {
         <ul>
           {this.state.pizzas.map(pizza => <li>{pizza.name}</li>)}
         </ul>
+        <div>
+          <button onClick={this.nextPage}>
+            Next
+          </button>
+        </div>
       </div>
     );
   }
