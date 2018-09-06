@@ -41,6 +41,15 @@ const currentOrder = (state = blankOrder, action) => {
       order_total: newTotal
     };
     return newState; // this becomes our "state" the next time the reducer is run
+  } else if (action.type === 'REMOVE_PIZZA') {
+    const currentPizzas = [...state.pizzas];
+    const idOfPizzaToDelete = action.id;
+    const newState = {
+      ...state,
+      // go through the currentPizzas array and remove the pizza whose id matches the id of the pizza we want to delete
+      pizzas: currentPizzas.filter(pizza => pizza._id !== idOfPizzaToDelete)
+    };
+    return newState;
   } // changes customer info
     else if (action.type === 'ADD_INFO') {
     const newCustomer = action.payload.customer;

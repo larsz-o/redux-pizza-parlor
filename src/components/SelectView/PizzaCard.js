@@ -33,7 +33,11 @@ class PizzaCard extends Component {
 
   removePizzaFromOrder = () => {
     console.log('removing from order:', this.props.pizza.name);
-    
+    const action = {
+      type: 'REMOVE_PIZZA',
+      id: this.props.pizza._id
+    };
+    this.props.dispatch(action);
   }
 
   render() {
