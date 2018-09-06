@@ -1,26 +1,36 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-class TableComponent extends Component{
-render(){
-    return(
-        // {this.props.reduxState.currentOrder.pizzas}
-<table>
-    <thead>
-        <tr>
-            <th>Food</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import TableItem from './TableItem/TableItem'
+class TableComponent extends Component {
+    render() {
+        return (
+            // {this.props.reduxState.currentOrder.pizzas}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        </tr>
-    </tbody>
-</table>
-    )
-}
+                    {this.props.reduxState.currentOrder.pizzas.map((pizzas, i) => {
+                        console.log(pizzas);
+
+                        return (
+                            <TableItem key={i} pizzas={this.props.reduxState.currentOrder.pizzas} />
+                        )
+                    })}
+
+                </tbody>
+            </table>
+        )
+    }
 
 }//end class
 
 
-export default TableComponent
+const mapReduxStateToProps = reduxState => ({
+    reduxState
+});
+export default connect(mapReduxStateToProps)(TableComponent);
