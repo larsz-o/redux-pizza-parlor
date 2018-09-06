@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import PizzaCard from './PizzaCard';
 
 class SelectView extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class SelectView extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/pizza')
+    axios.get('/api/pizza') // get pizzas from server
     .then(response => {
       const pizzasFromServer = response.data;
       console.log(pizzasFromServer);
@@ -34,7 +35,7 @@ class SelectView extends Component {
       <div>
         <h1>Step 1: Select Your Pizza</h1>
         <ul>
-          {this.state.pizzas.map(pizza => <li>{pizza.name}</li>)}
+          {this.state.pizzas.map(pizza => <PizzaCard key={pizza._id} pizza={pizza} />)}
         </ul>
         <div>
           <button onClick={this.nextPage}>
