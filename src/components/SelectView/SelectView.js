@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 class SelectView extends Component {
   render() {
     return (
-      'Hello from SelectView'
+      <div>
+        <h1>Step 1: Select Your Pizza</h1>
+      </div>
     );
   }
 }
 
-const mapReduxStateToProps = reduxState => ({reduxState});
-export default connect(mapReduxStateToProps)(SelectView);
+export default connect()(SelectView);
