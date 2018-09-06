@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import CustomerView from '../../CustomerView/CustomerView';
 
 class TopComponent extends Component {
-
+    //variables
     customer = this.props.reduxState.currentOrder.customer;
     type = this.props.reduxState.currentOrder.type;
 
