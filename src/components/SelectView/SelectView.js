@@ -13,8 +13,11 @@ class SelectView extends Component {
   componentDidMount() {
     axios.get('/api/pizza')
     .then(response => {
-      console.log(response.data);
-      
+      const pizzasFromServer = response.data;
+      console.log(pizzasFromServer);
+      this.setState({
+        pizzas: pizzasFromServer
+      });
     }).catch(error => {
       console.log('/api/pizza GET error:', error);
     });
@@ -25,7 +28,7 @@ class SelectView extends Component {
       <div>
         <h1>Step 1: Select Your Pizza</h1>
         <ul>
-
+          {this.state.pizzas.map(pizza => <li>{pizza.name}</li>)}
         </ul>
       </div>
     );
