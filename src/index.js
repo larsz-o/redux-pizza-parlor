@@ -32,9 +32,13 @@ const currentOrder = (state = blankOrder, action) => {
   // Changes Pizza only 
   if (action.type === 'ADD_PIZZA') {
     const newPizzas = [...state.pizzas, action.payload];
+
+    // reduce will take the cost of each pizza and add them together into a "total", which is returned from the function
+    const newTotal = newPizzas.reduce((total, pizza) => total + Number(pizza.cost), 0);
     const newState = {
       ...state,
-      pizzas: newPizzas
+      pizzas: newPizzas,
+      order_total: newTotal
     };
     return newState; // this becomes our "state" the next time the reducer is run
   } // changes customer info
