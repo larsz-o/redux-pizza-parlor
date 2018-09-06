@@ -46,7 +46,7 @@ class PizzaCard extends Component {
     console.log(pizzasInOrder);
     return(
       <div style={styles.container}>
-        <img style={styles.image} src={pizza.image_path} />
+        <img style={styles.image} src={pizza.image_path} alt={pizza.name}/>
         <div>
           <h2>{pizza.name}</h2>
           <p>{pizza.description}</p>
