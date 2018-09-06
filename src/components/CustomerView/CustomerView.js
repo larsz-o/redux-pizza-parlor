@@ -7,7 +7,7 @@ class CustomerView extends Component {
         this.state = {
             customer: {
                 name: '',
-                street: '',
+                street_address: '',
                 city: '', 
                 zip: '',
             },
@@ -39,7 +39,7 @@ class CustomerView extends Component {
         this.setState({
             customer: {
                 name: '',
-                street: '',
+                street_address: '',
                 city: '', 
                 zip: '',
             },
@@ -54,7 +54,7 @@ class CustomerView extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input placeholder="Name" onChange={this.handleCustomerChange} name="name"/>
                     <br />
-                    <input placeholder="Street Address" onChange={this.handleCustomerChange} name="street"/>
+                    <input placeholder="Street Address" onChange={this.handleCustomerChange} name="street_address"/>
                     <br />
                     <input placeholder="City" onChange={this.handleCustomerChange} name="city"/>
                     <br />
