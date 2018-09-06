@@ -42,7 +42,7 @@ class AdminView extends Component {
                   {order.customer.name}
                   </td>
                   <td>
-                  {moment(order.time).format('MMMM Do YYYY, h:mm:ss a')}
+                  {moment(order.time).format('MM/DD/YYYY')} at {moment(order.time).format('h:mm a')}
                   </td>
                   <td>
                   {order.type}
