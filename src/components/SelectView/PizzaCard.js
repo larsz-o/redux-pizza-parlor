@@ -43,7 +43,6 @@ class PizzaCard extends Component {
   render() {
     const { pizza } = this.props;
     const pizzasInOrder = this.props.reduxState.currentOrder.pizzas;
-    console.log(pizzasInOrder);
     return(
       <div style={styles.container}>
         <img style={styles.image} src={pizza.image_path} alt={pizza.name}/>
