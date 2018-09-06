@@ -21,3 +21,18 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+header {
+  background-color: navy;
+  color: white;
+  height: 150px; 
+}
+#site-title {
+  float: left; 
+  margin-top: 50px; 
+  margin-left: 10px; 
+}
+#total-container {
+  float: right;
+  padding: 25px;
+  margin-top: 85px;
+}

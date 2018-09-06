@@ -34,7 +34,18 @@ class CustomerView extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
+        const action = {type: 'ADD_INFO', payload: this.state};
+        this.props.dispatch(action);
+        this.setState({
+            customer: {
+                name: '',
+                street: '',
+                city: '', 
+                zip: '',
+            },
+            type: '',
+        });
+        this.props.history.push('/checkout');
     }
     render() {
         return (
@@ -49,7 +60,6 @@ class CustomerView extends Component {
                     <br />
                     <input placeholder="Zip" onChange={this.handleCustomerChange} name="zip"/>
                     <br />
-                    <h2></h2>
                     <div>
                         <input onChange={this.handleTypeChange} type="radio" id="pickup" value="Pickup" name="type" />
                         <label htmlFor="pickup">Pickup</label>
