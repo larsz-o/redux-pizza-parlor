@@ -43,10 +43,11 @@ const currentOrder = (state = blankOrder, action) => {
     return newState; // this becomes our "state" the next time the reducer is run
   } // changes customer info
     else if (action.type === 'ADD_INFO') {
-    const newCustomer = action.payload;
+    const newCustomer = action.payload.customer;
     const newState = {
       ...state,
-      customer: newCustomer
+      customer: newCustomer,
+      type: action.payload.type
     };
     return newState;
   }
