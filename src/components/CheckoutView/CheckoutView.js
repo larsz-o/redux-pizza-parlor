@@ -8,8 +8,6 @@ class CheckoutView extends Component{
 
     postOrder = () => {
         const currentOrder = this.props.reduxState.currentOrder;
-        console.log(currentOrder);
-        
         axios({
             method: 'POST',
             url:'/api/order',
@@ -31,9 +29,8 @@ class CheckoutView extends Component{
             {/* <TableComponent /> */}
             <button onClick={this.postOrder}>Checkout</button>
             </div>
-        )
+        ) //end of return
     }//end render
-
 }//end class
 const mapReduxStateToProps = (reduxState) => ({
     reduxState
