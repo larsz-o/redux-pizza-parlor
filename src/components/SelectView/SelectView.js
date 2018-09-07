@@ -47,7 +47,7 @@ class SelectView extends Component {
         </div>
         
         <div>
-          <button onClick={this.nextPage}>
+          <button class="next-page" onClick={this.nextPage}>
             Next
           </button>
         </div>
