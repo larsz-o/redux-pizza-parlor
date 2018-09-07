@@ -15,6 +15,7 @@ const containerStyle = {
 class SelectView extends Component {
   constructor(props) {
     super(props);
+    // Stores pizzas from componentDidMount
     this.state = {
       pizzas: []
     };
@@ -24,7 +25,8 @@ class SelectView extends Component {
     axios.get('/api/pizza') // get pizzas from server
     .then(response => {
       const pizzasFromServer = response.data;
-      console.log(pizzasFromServer);
+      // console.log(pizzasFromServer);
+      // Stores pizzas in the state, updates DOM
       this.setState({
         pizzas: pizzasFromServer
       });
@@ -34,8 +36,8 @@ class SelectView extends Component {
   }
 
   nextPage = () => {
-    console.log('nextPage working');
-    
+    // console.log('nextPage working');
+    // Automatically sends the user to the next page
     this.props.history.push("customer")
   }
 
@@ -44,7 +46,9 @@ class SelectView extends Component {
       <div>
         <Header />
         <h1>Step 1: Select Your Pizza</h1>
+        {/* Container for all pizza cards */}
         <div style={containerStyle}>
+        {/* Creates a new PizzaCard element for every pizza in state */}
           {this.state.pizzas.map(pizza => <PizzaCard key={pizza._id} pizza={pizza} />)}
         </div>
         

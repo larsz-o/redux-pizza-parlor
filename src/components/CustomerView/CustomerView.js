@@ -6,6 +6,9 @@ import './CustomerView.css'
 class CustomerView extends Component {
     constructor() {
         super();
+
+        // Stores user contact information
+        // Includes the type of order (pickup || delivery)
         this.state = {
             customer: {
                 name: '',
@@ -16,9 +19,13 @@ class CustomerView extends Component {
             type: '',
         }
     }
+    // Sends user back to home
     goBackBtn = () => {
         this.props.history.push('/')
     }
+
+    // Takes input text fields 
+    // adds the infomration to the customer state
     handleCustomerChange = (event) => {
         this.setState({
             ...this.state,
@@ -29,6 +36,8 @@ class CustomerView extends Component {
         });
     }
 
+    // Takes input from radio buttons
+    // Adds to customer state
     handleTypeChange = (event) => {
         this.setState({
             ...this.state,
@@ -36,11 +45,13 @@ class CustomerView extends Component {
         });
     }
 
+    // Submits user infomration to redux.
+    // Resets
     handleSubmit = (event) => {
         event.preventDefault();
         const action = { type: 'ADD_INFO', payload: this.state };
         this.props.dispatch(action);
-        
+        // Pushes customer to checkout page
         this.props.history.push('/checkout');
     }
     render() {

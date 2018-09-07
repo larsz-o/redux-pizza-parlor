@@ -11,6 +11,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <br/>
+          {/* CLient-side Routers */}
           <Route exact path="/" component={SelectView} />
           <Route path="/customer" component={CustomerView} />
           <Route path="/checkout" component={CheckoutView} />
