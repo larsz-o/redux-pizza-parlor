@@ -4,6 +4,7 @@ import TopComponent from './TopComponent/TopComponent.js';
 import TableComponent from './TableComponent/TableComponent.js';
 import {connect} from 'react-redux';
 import '../CheckoutView/CheckoutView.css';
+import CheckoutHeader from '../Header/CheckoutHeader.js';
 
 
 class CheckoutView extends Component {
@@ -33,6 +34,7 @@ class CheckoutView extends Component {
     render() {
         return (
             <div>
+                <CheckoutHeader />
                 <TopComponent />
                 <TableComponent />
                 <div>
