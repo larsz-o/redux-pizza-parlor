@@ -7,6 +7,33 @@ Before you get started make sure to read through **ALL** requirements and outlin
 Server side code for baseline functionality has been provided for you. Each member of your team will need to import the list of pizzas into your Mongo Database. Make sure mongo is running `mongod`, open this project folder in terminal and run the following command:
 
 **Import data**
+##Pizza Goat
+
+A React.js application for ordering pizzas.
+
+### Technology Used
+* Javascript / HTML / CSS
+* React.js
+* Redux
+* MongoDB
+* Mongoose
+* Robo3T
+* Express
+* Node.js
+* Momentjs
+
+### Process Shots
+![process 1](screenshots/process_01.jpg)
+![process 2](screenshots/process_02.jpg)
+### Screenshot
+
+### Setup
+**Terminal**
+
+```
+mongod
+```
+**Import data**
 
 ```
 mongoimport --db pizza_parlor --collection pizzas --file pizza.csv --type csv --headerline
@@ -79,41 +106,4 @@ After starting up the server, the following routes should be available. You can 
 **Returns** an array of orders.
 
 
-## BASE REQUIREMENTS
 
-Your client has asked your team to build a pizza ordering system. They have provided some of the server side routes and a list of pizzas they currently offer in CSV format (`pizza.csv`). Your team should build out the following views.
-
-### ORDER - SELECT PIZZA
-
-When visiting [http://localhost:3000/](http://localhost:3000/) display all of the pizzas on the screen. Allow users to add or remove each pizza they would like to order. **For base mode, only allow the user to have one of each pizza in their cart.** Show the total cost of items in the cart in the top right of this page. 
-
-This page should have a next button that brings the user to the **enter customer information page**.
-
-![Select Pizza View](wireframes/screen-one.png)
-
-### ORDER - ENTER CUSTOMER INFORMATION
-
-Collect user information, *name*, *street address*, *city* and *zip*. This page should have an option to select pickup vs. delivery. The total cost of the order should appear in the top right of this page. This page should have a next button that brings the user to the **checkout** page.
-
-![Select Pizza View](wireframes/screen-two.png)
-
-### ORDER - CHECKOUT
-
-Users should not be able to modify item totals on this screen. When they click checkout, the user information, order total and array of pizzas should be sent to the server. After the checkout is complete, navigate the user back to the **select pizza** page.
-
-![Select Pizza View](wireframes/screen-three.png)
-
-### ADMIN - ORDERS
-
-This page **should not** appear in the navigation bar. Eventually the client would like to add authentication but for now, it will be available to anyone with the url [http://localhost:3000/admin](http://localhost:3000/admin). This page will display the name, time and order total for each of the orders placed.
-
-![Select Pizza View](wireframes/screen-admin.png)
-
-
-## STRETCH GOALS
-
-- Improve the styling of the app using Material-UI cards, buttons, nav bar and icons.
-- Allow the user to go back to previous pages (until they've completed checkout).
-- Display a list of pizzas for each order on the orders page. 
-- Add a button on the orders page to track delivery status.
-- Add pictures to the `public/images` folder and update the image url for each pizza in the database using Robo Mongo. 
