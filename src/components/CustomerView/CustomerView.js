@@ -8,39 +8,41 @@ class CustomerView extends Component {
             customer: {
                 name: '',
                 street_address: '',
-                city: '', 
+                city: '',
                 zip: '',
             },
             type: '',
         }
     }
-
+    goBackBtn = () => {
+        this.props.history.push('/')
+    }
     handleCustomerChange = (event) => {
         this.setState({
             ...this.state,
-          customer: {
-              ...this.state.customer,
-              [event.target.name]: event.target.value,
-          }
+            customer: {
+                ...this.state.customer,
+                [event.target.name]: event.target.value,
+            }
         });
-      }
+    }
 
-      handleTypeChange = (event) => {
-          this.setState({
-              ...this.state,
-              type: event.target.value
-          });
-      }
+    handleTypeChange = (event) => {
+        this.setState({
+            ...this.state,
+            type: event.target.value
+        });
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const action = {type: 'ADD_INFO', payload: this.state};
+        const action = { type: 'ADD_INFO', payload: this.state };
         this.props.dispatch(action);
         this.setState({
             customer: {
                 name: '',
                 street_address: '',
-                city: '', 
+                city: '',
                 zip: '',
             },
             type: '',
@@ -52,13 +54,13 @@ class CustomerView extends Component {
             <div>
                 <h2>Customer Info</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input placeholder="Name" onChange={this.handleCustomerChange} name="name"/>
+                    <input placeholder="Name" onChange={this.handleCustomerChange} name="name" />
                     <br />
-                    <input placeholder="Street Address" onChange={this.handleCustomerChange} name="street_address"/>
+                    <input placeholder="Street Address" onChange={this.handleCustomerChange} name="street_address" />
                     <br />
-                    <input placeholder="City" onChange={this.handleCustomerChange} name="city"/>
+                    <input placeholder="City" onChange={this.handleCustomerChange} name="city" />
                     <br />
-                    <input placeholder="Zip" onChange={this.handleCustomerChange} name="zip"/>
+                    <input placeholder="Zip" onChange={this.handleCustomerChange} name="zip" />
                     <br />
                     <div>
                         <input onChange={this.handleTypeChange} type="radio" id="pickup" value="Pickup" name="type" />
@@ -67,8 +69,13 @@ class CustomerView extends Component {
                         <input onChange={this.handleTypeChange} type="radio" id="delivery" value="Delivery" name="type" />
                         <label htmlFor="delivery">Delivery</label>
                     </div>
-                    <input type="submit" value="Next"/>
+                    <input type="submit" value="Next" />
                 </form>
+                <div>
+                    <button onClick={this.goBackBtn}>
+                        Back
+                    </button>
+                </div>
             </div>
         )
     }
