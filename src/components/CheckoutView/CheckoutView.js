@@ -38,8 +38,8 @@ class CheckoutView extends Component {
                 <TopComponent />
                 <TableComponent />
                 <div>
-                    <button onClick={this.goBackBtn}>Back</button>
-                    <button onClick={this.postOrder}>Checkout</button>
+                    <button class="prev-page" onClick={this.goBackBtn}>Back</button>
+                    <button id="checkout-button" onClick={this.postOrder}>Checkout</button>
                 </div>
             </div>
         ) //end of return

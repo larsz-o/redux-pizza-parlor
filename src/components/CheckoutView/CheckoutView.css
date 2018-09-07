@@ -1,3 +1,6 @@
-button {
-    float: right;
+#checkout-button{
+    height: 50px;
+    width: 150px;
+    background-color: rgb(80,174,85);
+    color: white;
 }
