@@ -31,6 +31,7 @@ class AdminView extends Component {
           <th>Name</th>
           <th>Time Order Placed</th>
           <th>Type</th>
+          <th>Pizzas Ordered</th>
           <th>Cost</th>
           </tr>
           </thead>
@@ -46,6 +47,13 @@ class AdminView extends Component {
                   </td>
                   <td>
                   {order.type}
+                  </td>
+                  <td>
+                    {order.pizzas.map((pizza, i)=>{
+                      return(
+                      <span>{pizza.name}<br/> </span>
+                      ); 
+                    })}
                   </td>
                   <td>
                   {order.order_total}
