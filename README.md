@@ -1,13 +1,4 @@
-# React Pizza Parlor
-
-Before you get started make sure to read through **ALL** requirements and outline a plan for your group. Assign out tasks and use branches to allow team members to work in parallel.
-
-### Setup
-
-Server side code for baseline functionality has been provided for you. Each member of your team will need to import the list of pizzas into your Mongo Database. Make sure mongo is running `mongod`, open this project folder in terminal and run the following command:
-
-**Import data**
-##Pizza Goat
+#Pizza Goat
 
 A React.js application for ordering pizzas.
 
@@ -26,6 +17,7 @@ A React.js application for ordering pizzas.
 ![process 1](screenshots/process_01.jpg)
 ![process 2](screenshots/process_02.jpg)
 ### Screenshot
+
 
 ### Setup
 **Terminal**

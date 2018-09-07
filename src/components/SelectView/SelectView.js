@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import PizzaCard from './PizzaCard';
 import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js'; 
 
 const containerStyle = {
   width: '900px',
@@ -57,6 +58,7 @@ class SelectView extends Component {
             Next
           </button>
         </div>
+        <Footer />
       </div>
     );
   }

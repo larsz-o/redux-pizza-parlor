@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Header.css';
 
 class CheckoutHeader extends Component {
     render() {

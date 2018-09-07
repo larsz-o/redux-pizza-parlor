@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
 import './CustomerView.css' 
+import Footer from '../Footer/Footer.js'; 
 
 class CustomerView extends Component {
     constructor() {
@@ -75,13 +76,14 @@ class CustomerView extends Component {
                         <input onChange={this.handleTypeChange} type="radio" id="delivery" value="Delivery" name="type" />
                         <label htmlFor="delivery">Delivery</label>
                     </div>
-                    <button class="next-page" type="submit" value="Next" id="next-button">Next</button>
+                    <button className="next-page" type="submit" value="Next" id="next-button">Next</button>
                 </form>
                 <div>
-                    <button class="prev-page" onClick={this.goBackBtn}>
+                    <button className="prev-page" onClick={this.goBackBtn}>
                         Back
                     </button>
                 </div>
+                <Footer/>
             </div>
         )
     }
