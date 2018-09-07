@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'; 
 import moment from 'moment'; 
+import CheckoutHeader from '../Header/CheckoutHeader';
 
 class AdminView extends Component {
 
@@ -27,6 +28,8 @@ class AdminView extends Component {
 
   render() {
     return(
+      <div>
+        <CheckoutHeader />
       <table>
         <thead>
         <tr>
@@ -70,6 +73,7 @@ class AdminView extends Component {
           </tbody>
 
       </table> 
+      </div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import PizzaCard from './PizzaCard';
+import Header from '../Header/Header.js';
 
 const containerStyle = {
   width: '900px',
@@ -43,6 +44,7 @@ class SelectView extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>Step 1: Select Your Pizza</h1>
         {/* Container for all pizza cards */}
         <div style={containerStyle}>
@@ -51,7 +53,7 @@ class SelectView extends Component {
         </div>
         
         <div>
-          <button onClick={this.nextPage}>
+          <button className="next-page" onClick={this.nextPage}>
             Next
           </button>
         </div>

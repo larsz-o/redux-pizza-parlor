@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import TopComponent from './TopComponent/TopComponent.js';
 import TableComponent from './TableComponent/TableComponent.js';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+import '../CheckoutView/CheckoutView.css';
+import CheckoutHeader from '../Header/CheckoutHeader.js';
+
 
 class CheckoutView extends Component {
     //sends user to previous page
@@ -31,11 +34,12 @@ class CheckoutView extends Component {
     render() {
         return (
             <div>
+                <CheckoutHeader />
                 <TopComponent />
                 <TableComponent />
                 <div>
-                    <button onClick={this.goBackBtn}>Back</button>
-                    <button onClick={this.postOrder}>Checkout</button>
+                    <button class="prev-page" onClick={this.goBackBtn}>Back</button>
+                    <button id="checkout-button" onClick={this.postOrder}>Checkout</button>
                 </div>
             </div>
         ) //end of return

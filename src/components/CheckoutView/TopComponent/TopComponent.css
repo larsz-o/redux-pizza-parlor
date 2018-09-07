@@ -1,0 +1,26 @@
+p {
+    font-size: 20px;
+    text-align: left;
+}
+
+span {
+    text-align: center;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.address {
+    width: 50%;
+}
+
+.type {
+    float: right;
+    text-align: center;
+    border: double;
+    width: 50%;
+    height: 20%;
+}
