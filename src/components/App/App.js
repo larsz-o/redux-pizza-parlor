@@ -13,7 +13,6 @@ class App extends Component {
         <div className="App">
          <Header/>
           <br/>
-          <img src="images/pizza_photo.png" alt="pizza"/>
           <Route exact path="/" component={SelectView} />
           <Route path="/customer" component={CustomerView} />
           <Route path="/checkout" component={CheckoutView} />
