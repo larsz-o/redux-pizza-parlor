@@ -14,7 +14,8 @@ const styles = {
     margin: '10px',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    gridTemplateRows: '200px 200px 50px'
+    gridTemplateRows: '200px 200px 50px',
+    backgroundColor: 'white'
   },
   image: {
     height: '100%',

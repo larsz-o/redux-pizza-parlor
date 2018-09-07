@@ -18,6 +18,8 @@ class TopComponent extends Component {
                 </div>
                 <div className="type">
                     <span>{this.type}</span>
+                    <br />
+                    <span>Total: $ {this.props.reduxState.currentOrder.order_total.toFixed(2)}</span>
                 </div>   
             </div>
         ) //end of return
