@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './CustomerView.css' 
 
 class CustomerView extends Component {
     constructor() {
@@ -69,10 +70,10 @@ class CustomerView extends Component {
                         <input onChange={this.handleTypeChange} type="radio" id="delivery" value="Delivery" name="type" />
                         <label htmlFor="delivery">Delivery</label>
                     </div>
-                    <input type="submit" value="Next" />
+                    <input type="submit" value="Next" id="next-button" />
                 </form>
                 <div>
-                    <button onClick={this.goBackBtn}>
+                    <button class="prev-page" onClick={this.goBackBtn}>
                         Back
                     </button>
                 </div>
