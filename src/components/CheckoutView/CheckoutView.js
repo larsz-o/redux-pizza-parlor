@@ -3,6 +3,7 @@ import axios from 'axios';
 import TopComponent from './TopComponent/TopComponent.js';
 import TableComponent from './TableComponent/TableComponent.js';
 import {connect} from 'react-redux';
+import '../CheckoutView/CheckoutView.css';
 
 class CheckoutView extends Component{
 
@@ -29,9 +30,10 @@ class CheckoutView extends Component{
     render(){
         return(
             <div>
-            <TopComponent />
-            <TableComponent /> 
-            <button onClick={this.postOrder}>Checkout</button>
+                <h2>Step 3: Checkout</h2>
+                <TopComponent />
+                <TableComponent /> 
+                <button onClick={this.postOrder}>Checkout</button>
             </div>
         ) //end of return
     }//end render
