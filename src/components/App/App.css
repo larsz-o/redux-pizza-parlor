@@ -35,10 +35,9 @@ table{
 }
 th {
   background-color: lightsteelblue;
-  font-size: 1.5em; 
 }
 th, td {
-  height: 50px; 
+  height: 25px; 
   text-align: center; 
   padding: 15px; 
   border-bottom: 1px solid #ddd;
