@@ -1,21 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import TopComponent from './TopComponent/TopComponent.js';
 import TableComponent from './TableComponent/TableComponent.js';
 import {connect} from 'react-redux';
 import '../CheckoutView/CheckoutView.css';
 
-class CheckoutView extends Component{
 
-    //postOrder () will run to post the pizza orders in a table where the admin could see
+class CheckoutView extends Component {
+    //sends user to previous page
+    goBackBtn = () => {
+        this.props.history.push("customer")
+    }
     postOrder = () => {
         const currentOrder = this.props.reduxState.currentOrder;
         axios({
             method: 'POST',
-            url:'/api/order',
+            url: '/api/order',
             data: currentOrder
         }).then((response) => {
-            const action = {type: 'CLEAR_ORDER'};
+            const action = { type: 'CLEAR_ORDER' };
             this.props.dispatch(action);
             //takes user back to the first page of ordering pizza
             this.props.history.push('/');
@@ -27,13 +30,15 @@ class CheckoutView extends Component{
         alert('Order confirmed!');
     } //end of postOrder
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <h2>Step 3: Checkout</h2>
                 <TopComponent />
-                <TableComponent /> 
-                <button onClick={this.postOrder}>Checkout</button>
+                <TableComponent />
+                <div>
+                    <button onClick={this.goBackBtn}>Back</button>
+                    <button onClick={this.postOrder}>Checkout</button>
+                </div>
             </div>
         ) //end of return
     }//end render
