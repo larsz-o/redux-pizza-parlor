@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Styles for individual cards
 const styles = {
   container: {
     float: 'left',
@@ -24,6 +25,7 @@ const styles = {
 
 class PizzaCard extends Component {
 
+  // Sends the order to the redux
   addPizzaToOrder = () => {
     console.log('adding to order:', this.props.pizza.name);
     const action = {
@@ -33,6 +35,7 @@ class PizzaCard extends Component {
     this.props.dispatch(action);
   };
 
+  // Sends the id of the pizza to delete to redux
   removePizzaFromOrder = () => {
     console.log('removing from order:', this.props.pizza.name);
     const action = {
@@ -43,7 +46,9 @@ class PizzaCard extends Component {
   }
 
   render() {
+    // Contains the data for the current pizza card
     const { pizza } = this.props;
+    // All the pizzas in the order (an array)
     const pizzasInOrder = this.props.reduxState.currentOrder.pizzas;
     return(
       <div style={styles.container}>
