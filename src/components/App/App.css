@@ -36,3 +36,36 @@ header {
   padding: 25px;
   margin-top: 85px;
 }
+button {
+  font-size: 1em;
+  border: 1px transparent;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+}
+button:hover {
+  filter: brightness(0.95);
+}
+button:active {
+  filter: brightness(0.85);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.25) inset;
+}
+button.add-pizza {
+  background-color: forestgreen;
+  color: white;
+}
+button.remove-pizza {
+  background-color: firebrick;
+  color: white;
+}
+button.next-page {
+  height: 50px;
+  width: 150px;
+  background-color: dodgerblue;
+  color: white;
+}
+button.prev-page {
+  height: 50px;
+  width: 150px;
+  background-color: gainsboro;
+  color: dimgray;
+}
