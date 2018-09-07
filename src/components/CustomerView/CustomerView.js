@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header.js';
 import './CustomerView.css' 
 
 class CustomerView extends Component {
@@ -53,6 +54,7 @@ class CustomerView extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <h2>Customer Info</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input placeholder="Name" onChange={this.handleCustomerChange} name="name" />
