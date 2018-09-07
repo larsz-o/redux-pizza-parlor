@@ -56,7 +56,7 @@ class AdminView extends Component {
                     })}
                   </td>
                   <td>
-                  {order.order_total}
+                  {order.order_total.toFixed(2)}
                   </td>
                 </tr>
               );
