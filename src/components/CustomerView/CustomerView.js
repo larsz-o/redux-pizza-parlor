@@ -51,16 +51,7 @@ class CustomerView extends Component {
         event.preventDefault();
         const action = { type: 'ADD_INFO', payload: this.state };
         this.props.dispatch(action);
-        this.setState({
-            customer: {
-                name: '',
-                street_address: '',
-                city: '',
-                zip: '',
-            },
-            type: '',
-        });
-        // Pushes customer to the checkout page
+        // Pushes customer to checkout page
         this.props.history.push('/checkout');
     }
     render() {
