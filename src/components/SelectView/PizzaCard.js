@@ -56,8 +56,8 @@ class PizzaCard extends Component {
         {/* Check if the pizza in the card is already in the order (compare ids). 
         If not, show the Add to Order button. If so, show the Remove from Order button. */}
         {pizzasInOrder.some(p => p._id === pizza._id) === false
-        ? <button class="add-pizza" onClick={this.addPizzaToOrder}>Add to Order</button>
-        : <button class="remove-pizza" onClick={this.removePizzaFromOrder}>Remove from Order</button>}
+        ? <button className="add-pizza" onClick={this.addPizzaToOrder}>Add to Order</button>
+        : <button className="remove-pizza" onClick={this.removePizzaFromOrder}>Remove from Order</button>}
       </div>
     );
   }
