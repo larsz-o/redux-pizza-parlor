@@ -6,23 +6,25 @@ import CheckoutHeader from '../Header/CheckoutHeader';
 
 class AdminView extends Component {
 
+  // Initial function to load history into DOM
   componentDidMount(){
     this.getOrderHistory();
   }
 
+  // GET
   getOrderHistory = () => {
     axios({
       method: 'GET',
       url: '/api/order'
     }).then((response) => {
-      const orderHistory = response.data; 
-      console.log(orderHistory);
+      const orderHistory = response.data;
+      // Sends history to reducer
       const action = {type: 'GET_HISTORY', payload: orderHistory};
-      this.props.dispatch(action); 
+      this.props.dispatch(action);
     }).catch((error)=>{
       console.log('Error getting order history', error);
     })
-  }
+  } // End GET request
 
   render() {
     return(
@@ -39,6 +41,8 @@ class AdminView extends Component {
           </tr>
           </thead>
           <tbody>
+
+            {/* For each object in the history, create a line for the order */}
             {this.props.reduxState.history.map((order, i)=>{
               return (
                 <tr key={i}>
@@ -46,6 +50,7 @@ class AdminView extends Component {
                   {order.customer.name}
                   </td>
                   <td>
+                    {/* Formatting time using moment.js */}
                   {moment(order.time).format('MM/DD/YYYY')} at {moment(order.time).format('h:mm a')}
                   </td>
                   <td>
