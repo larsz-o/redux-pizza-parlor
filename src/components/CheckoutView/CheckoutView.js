@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 
 class CheckoutView extends Component{
 
+    //postOrder () will run to post the pizza orders in a table where the admin could see
     postOrder = () => {
         const currentOrder = this.props.reduxState.currentOrder;
         axios({
@@ -15,11 +16,14 @@ class CheckoutView extends Component{
         }).then((response) => {
             const action = {type: 'CLEAR_ORDER'};
             this.props.dispatch(action);
+            //takes user back to the first page of ordering pizza
             this.props.history.push('/');
         }).catch((error) => {
             alert('Unable to send order!');
             console.log('error in POST', error);
         });
+        //confirmation of order
+        alert('Order confirmed!');
     } //end of postOrder
 
     render(){
