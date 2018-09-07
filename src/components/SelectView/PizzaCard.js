@@ -21,6 +21,9 @@ const styles = {
     height: '100%',
     width: '100%',
     objectFit: 'fill'
+  },
+  p: {
+    textAlign: 'center',
   }
 };
 
@@ -56,8 +59,8 @@ class PizzaCard extends Component {
         <img style={styles.image} src={pizza.image_path} alt={pizza.name}/>
         <div>
           <h2>{pizza.name}</h2>
-          <p>{pizza.description}</p>
-          <p>{pizza.cost}</p>
+          <p style={styles.p}>{pizza.description}</p>
+          <p style={styles.p}>{pizza.cost}</p>
         </div>
         {/* Check if the pizza in the card is already in the order (compare ids). 
         If not, show the Add to Order button. If so, show the Remove from Order button. */}
