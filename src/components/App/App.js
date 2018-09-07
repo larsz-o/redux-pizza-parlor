@@ -5,13 +5,11 @@ import CustomerView from '../CustomerView/CustomerView.js';
 import CheckoutView from '../CheckoutView/CheckoutView.js';
 import AdminView from '../AdminView/AdminView.js';
 import {HashRouter as Router, Route} from "react-router-dom";
-import Header from '../Header/Header.js';
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-         <Header/>
           <br/>
           <Route exact path="/" component={SelectView} />
           <Route path="/customer" component={CustomerView} />
